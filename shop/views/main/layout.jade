@@ -1,44 +1,42 @@
-doctype 5
-html(lang="en")
+doctype html
+html(lang="pt-br")
   head
-    title #{store} | #{title}
+    title #{store} | #{__(title)}
     link(href="/css/bootstrap.min.css", rel="stylesheet")
     link(href="/css/main.css", rel="stylesheet")
   body
     .modal.hide.fade#modal
-    .navbar.navbar-static-top
-        .navbar-inner
-          .container
-            ul.nav
+    .navbar.navbar-static-top.navbar-default        
+          .container-fluid
+            ul.nav.navbar-nav.navbar-left
               li
-                a(href="/") Home
+                a(href="/") #{__('Home')}
               li
-                a(href="/about") About
+                a(href="/about") #{__('About')}
               li
-                a(href="/contact") Contact
+                a(href="/contact") #{__('Contact')}
               if (!locals.logged)
                 li
-                  a(data-toggle="modal", data-target="#modal", href="/modals/register") Register
+                  a(data-toggle="modal", data-target="#modal", href="/modals/register") #{__('Register')}
                 li
-                  a(data-toggle="modal", data-target="#modal", href="/modals/login") Login 
+                  a(data-toggle="modal", data-target="#modal", href="/modals/login") #{__('Login ')}
               else
                 li
-                  a(href="/account/home") Account
+                  a(href="/account/home") #{__('Account')}
                 li       
-                  a(href="/account/logout") Logout
+                  a(href="/account/logout") #{__('Logout')}
             #cart
               include ../cart/cart
     .container
       a(href="/")
         img(src="/img/style/header.png")
-      .navbar
-        .navbar-inner
-          ul.nav
+      .navbar.navbar-default
+          ul.nav.navbar-nav
             each category in categories
               li
-                a(href="/category/#{category.seo}") #{category.name}
-          form.navbar-search.pull-right
-            input.search-query(type="text", placeholder="Search")
+                a(href="/category/#{category.seo}") #{__(category.name)}
+          form.navbar-search.pull-right.navbar-form
+            input.form-control.search-query(type="text", placeholder="#{__('Search')}")
       .main
         block content
       hr

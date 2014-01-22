@@ -65,9 +65,10 @@ app.configure(function(){
 require('./admin/router')(app, passport);
 
 // Listen for requests
-app.listen(process.env.PORT);
+var port = process.env.PORT||config.port||3001;
+app.listen(port);
 
-console.log('NodeShop v' + info.version + ' Admin Area listening on port ' + process.env.PORT);
+console.log('NodeShop v' + info.version + ' Admin Area listening on port ' + port);
 
 // Handle all uncaught errors
 process.on('uncaughtException', function(err) {

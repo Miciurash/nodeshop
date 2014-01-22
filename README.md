@@ -51,3 +51,48 @@ The checkout is moving towards something that may be usable quite soon so watch 
 Also planned is an admin area, which I am considering running as a seperate server. This would make it secure and easy to access from a development envrironment.
 
 Billy Topley
+
+#Todo
+##Shop
+- Internacionalização (moeda)
+- Cadastro endereços
+- Zip code no checkout
+- Alterar quantidade no checkout
+- Produto de destaque máximo
+- Paypal    
+- Máscara de telefone
+- i18n
+- Integração com correios
+- Validação e-mail remota
+- Acompanhamento de compra
+- Busca de produtos
+- SEO
+- Tag
+- Captcha
+- Comentários pro produto
+- Compartilhar produto
+- Galeria de fotos
+- Quantidade pra comprar limitada ao estoque    
+- Somente exibir a quantidade se houver mais de um
+- Cobrança de cadastro
+- Envio de e-mails
+- Listagem de UF/Cidade
+- Cadastro via CPF
+
+##Admin
+- Máscara de valor
+- Internacionalização (moeda)
+- Listagem de categorias
+- Upload de imagem
+- Descrição do produto
+- Configuração do destaque
+- Marcar como vitrine
+- Frete
+- Processo de pagamento
+- Seletor de região disponível
+- Moderação de cadastro
+- Markdown na descrição do produto
+- Dependency injection
+- Models
+- Relatório enviados
+- NF-E ou resumo de notas

@@ -1,0 +1,19 @@
+'use strict';
+
+var i18n = function(){
+	var i18n = require('i18n'),
+	path = require('path');
+	
+	i18n.configure({		
+		locales:['pt-br', 'en'],
+		defaultLocale: 'pt-br',
+		directory: path.join(__dirname,'..', 'locale'),
+		indent: '\t'
+	});
+
+    console.log(path.join(__dirname,'..', 'locale'), '--locale--');
+    
+	return i18n;
+};
+
+module.exports = i18n();
