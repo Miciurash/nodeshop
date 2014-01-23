@@ -1,6 +1,7 @@
 'use strict';
 
 var container = require('dependable').container();
+var ps = require('pubsub-js');
 
 
 container.register('passport', require('passport'));

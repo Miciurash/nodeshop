@@ -10,8 +10,6 @@ var i18n = function(){
 		directory: path.join(__dirname,'..', 'locale'),
 		indent: '\t'
 	});
-
-    console.log(path.join(__dirname,'..', 'locale'), '--locale--');
     
 	return i18n;
 };

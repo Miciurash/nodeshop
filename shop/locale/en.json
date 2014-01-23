@@ -1,1 +1,14 @@
-{}
+{
+	"Featured": "Featured",
+	"NodeShop": "NodeShop",
+	"A Node.JS and Express powered E-Commerce System": "A Node.JS and Express powered E-Commerce System",
+	"Home": "Home",
+	"About": "About",
+	"Contact": "Contact",
+	"Register": "Register",
+	"Login": "Login",
+	"Search": "Search",
+	"Cart": "Cart",
+	"About Us": "About Us",
+	"About Page": "About Page"
+}

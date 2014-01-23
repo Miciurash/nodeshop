@@ -1,0 +1,28 @@
+<% layout('../_layout') %>
+
+
+  <a href="#" class="thumbnail">
+    <img src="http://placehold.it/930x160" alt="">
+  </a>
+  <hr>
+  <h4>
+    <%=__( "Featured")%>
+  </h4>
+  <ul class="thumbnails">
+    <%featured.forEach(function(product){%>
+      <li class="col-md-3">
+        <a href="/product/<%=product.seo%>" class="thumbnail">
+          <img src="" alt="<%=product.seo%>">
+          <h6>
+            <%=product.name%>
+          </h6>
+          <p class="pull-right">R$
+            <%=product.pricing.retail%>
+          </p>
+        </a>
+      </li>
+      <%})%>
+  </ul>
+
+
+

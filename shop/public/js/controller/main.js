@@ -9,16 +9,16 @@ $(document).ready(function() {
         });
     });
     
-    $(document).on('click', "a", function(e) {
+    $(document).on('click', ".add", function(e) {
         
-        var addId = $(this).attr('addId');
+        var addId = $(this).data().id;
         if (addId) {$.post('/cart/add/' + addId, function(data) {
             $('#cart').html(data);
         });}
      
     });
     
-    $(document).on('click', "i", function(e) {
+    $(document).on('click', ".remove", function(e) {
         var remId = $(this).attr('remId');
         if (remId) {$.post('/cart/rem/' + remId, function(data) {
             $('#cart').html(data);

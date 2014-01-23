@@ -1,0 +1,16 @@
+<div class="btn-group pull-right navbar-form">
+  <%if(!cart){%>
+    <btton class="btn"><span class="glyphicon glyphicon-shopping-cart"></span><b><%= __('Cart') %> : 0</b></btton>
+  <%}else{%>
+    <btton class="btn"><span class="glyphicon glyphicon-shopping-cart"></span><b><%= __('Cart') %> : <%= cart.count %></b></btton>
+    <ul>
+      <li class="dropdown-menu">
+        <%cart.products.forEach(function(produt){%>
+          <li><a href="/product/<%=product.seo%>"><span class="glyphicon glyphicon-remove pull-right remove" data-id="<%=product.id%>"></span>|<%=product.name%></a></li>
+        <%})%>
+      <li class="divider"></li>
+      <li><a href="/checkout/cart"><%= __('Checkout') %></a></li>
+      </li>
+    </ul>
+  <%}%>
+</div>

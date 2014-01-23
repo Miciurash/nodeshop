@@ -7,6 +7,7 @@ module.exports = function (passport, config, i18n, database, info, flash) {
     var mongoStore = require('connect-mongo')(express);
     var passport = require('passport');
     // Require needed files
+    var engine = require('ejs-locals');
 
     console.log('NodeShop Started!');
 
@@ -16,10 +17,10 @@ module.exports = function (passport, config, i18n, database, info, flash) {
 
     // Configure Express
     app.configure(function () {
-
+        app.engine('ejs', engine);
         // Set up jade
         app.set('views', __dirname + '/shop/views');
-        app.set('view engine', 'jade');
+        app.set('view engine', 'ejs');
 
         app.use(express.favicon());
         app.use(express.cookieParser());
@@ -52,9 +53,9 @@ module.exports = function (passport, config, i18n, database, info, flash) {
             res.locals.authenticated = req.isAuthenticated();
             next();
         });
-        
+
         app.use(i18n.init);
-        
+
         app.use(app.router);
 
         // Define public assets
@@ -63,7 +64,7 @@ module.exports = function (passport, config, i18n, database, info, flash) {
     });
 
     app.start = function (port) {
-        var port = port||process.env.PORT||config.port||3000;
+        var port = port || process.env.PORT || config.port || 3000;
         app.listen(port);
         console.log('NodeShop v' + info.version + ' listening on port ' + port);
 
