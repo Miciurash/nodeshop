@@ -1,6 +1,6 @@
 extend ../layout
 block content
-    form(action="/products/#{product._id}", method="post", role="form", name="form").form-horizontal#form
+    form(action="/products/#{product._id}", method="post", role="form", name="form", enctype="multipart/form-data").form-horizontal#form
         .panel.panel-default
             .panel-heading Details
             .panel-body
@@ -17,10 +17,14 @@ block content
                 .form-group
                     label.control-label.col-sm-1(for="category") Category
                     .col-sm-3
-                        input.form-control(type="text", name="category", placeholder="Category", value=product.category)
+                        select.form-control(name="category", value=product.category)
+                            option Teste
                     label.control-label.col-sm-1(for="seo") SEO
                     .col-sm-3
                         input.form-control(type="text", name="seo", placeholder="SEO", value=product.seo)
+                    label.control-label.col-sm-1(for="image") Image
+                    .col-sm-3
+                        input.form-control(type="file", name="image", placeholder="Image")
         .panel.panel-default
             .panel-heading Pricing
             .panel-body

@@ -1,28 +1,35 @@
-extend layout
-block content
-  .row
-    h2 #{title}
-    hr
-  .row
-      table.table.table-hover
-        thead
-          th Name
-          th Price
-          th Quantity
-          th Remove
-        tbody
-          each product in cart.products
-            tr
-              td  
-                a(href='/product/#{product.seo}') #{product.name}
-              td  £#{product.price}
-              td= product.quantity
-              td 
-                i.icon-remove
-  .row
-     .pull-right
-        h4 Total: £#{cart.total}
-        if (!locals.logged)
-            a(href="/checkout/guest").btn.btn-primary Continue As Guest
-        else
-            a(href="/checkout/order").btn.btn-primary Continue As #{user.name.first}
+<%layout("../_layout")%>
+<div class="row">
+    <h2><%=__(title)%></h2>
+    <hr>
+</div>
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+            <th><%=__("Name")%></th>
+            <th><%=__("Price")%></th>
+            <th><%=__("Quantity")%></th>
+            <th><%=__("Remove")%></th>
+        </thead>
+        <tbody>
+            <%cart.products.forEach(function(product){%>
+                <tr>
+                    <td><a href="/product/<%=product.seo%>"><%=product.name%></a></td>
+                    <td>$<%=product.price%></td>
+                    <td><%=product.quantity%></td>
+                    <td><span class="glyphicon glyphicon-remove"></span></td>
+                </tr>
+            <%});%>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="pull-right">
+        <h4><%=__("Total")%>:<%=cart.total%></h4>
+        <%if(!locals.logged){%>
+            <a href="/checkout/guest" class="btn btn-primary"><%=Proceed as guest.%></a>
+        <%}else{%>
+            <a href="/checkout/order" class="btn btn-primary"><%=__("Proceed as ")%> <%=user.name.first%></a>
+        <%}%>
+    </div>
+</div>

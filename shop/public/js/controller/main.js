@@ -4,7 +4,7 @@ $(document).ready(function() {
         e.preventDefault();
         var url = $(this).attr('href');
         
-        $('#modal').load(url,function(){
+        $('#modal #modal-dialog').load(url,function(){
             $('#modal').modal('show');
         });
     });

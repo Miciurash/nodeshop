@@ -40,7 +40,7 @@ app.configure(function(){
     
     app.use(express.favicon());
     app.use(express.cookieParser());
-    app.use(express.bodyParser());
+    app.use(express.bodyParser({ keepExtensions: true, uploadDir: 'uploads/' }));
 
     // Set up sessions
     app.use(express.session({
@@ -58,6 +58,7 @@ app.configure(function(){
     
     // Define public assets
     app.use(express.static(__dirname + '/admin/public'));
+    app.use(express.static(__dirname + '/uploads'));
   
 });
     
